@@ -14,13 +14,32 @@ var getApi= function(event) {
   searchword = nameInputEl.value.trim();
   var radioValue = $("input[name='book']:checked").val();
 console.log(radioValue);
-var requestUrl2= "https://openlibrary.org/isbn/"+searchword +".json";
+var requestUrl2= "https://openlibrary.org/search/"+radioValue+"s.json?q="+searchword;
 
   //https://www.googleapis.com/books/v1/volumes?q="+radiovalue+"isbn:keyes&key="+GBooksApiID;
 
-  var requestUrl = "https://api.nytimes.com/svc/books/v3/reviews.json?"+radioValue+"="+searchword+"&api-key="+NYTapiID;
+  var requestUrl = "https://api.nytimes.com/svc/books/v3/reviews?"+radioValue+"="+searchword+"&api-key="+NYTapiID;
+  var requestUrl3 = "http://glgberat:Project1@api.repo.nypl.org/api/v1/items/search.json?q="+searchword+"&publicDomainOnly=true";
   
-  
+
+
+  Promise.all([
+    fetch(requestUrl),
+    fetch(requestUrl3),
+  ]).then(function (responses) {
+    // Get a JSON object from each of the responses
+    return Promise.all(responses.map(function (response) {
+      return response.json();
+    }));
+  }).then(function (data) {
+    // Log the data to the console
+    // You would do something with both sets of data here
+    console.log(data);
+  }).catch(function (error) {
+    // if there's an error, log it
+    console.log(error);
+  });
+/*
 
   fetch(requestUrl)
     .then(function(response) {
@@ -37,7 +56,7 @@ var requestUrl2= "https://openlibrary.org/isbn/"+searchword +".json";
 
     fetch(requestUrl2))
      .then(function(response) {
-       return response;
+       return response.json();
      })
   
      
@@ -48,6 +67,8 @@ var requestUrl2= "https://openlibrary.org/isbn/"+searchword +".json";
        
      });
     
+
+     */
 
     
 } 
