@@ -19,13 +19,14 @@ var requestUrl2= "https://openlibrary.org/search/"+radioValue+"s.json?q="+search
   //https://www.googleapis.com/books/v1/volumes?q="+radiovalue+"isbn:keyes&key="+GBooksApiID;
 
   var requestUrl = "https://api.nytimes.com/svc/books/v3/reviews?"+radioValue+"="+searchword+"&api-key="+NYTapiID;
-  var requestUrl3 = "http://glgberat:Project1@api.repo.nypl.org/api/v1/items/search.json?q="+searchword+"&publicDomainOnly=true";
+  var requestUrl3="https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyBHindfXjGQKCb_YXtPUsp1Ectnqpf0PmA";
   
 
 
   Promise.all([
     fetch(requestUrl),
-    fetch(requestUrl3),
+    fetch(requestUrl2),
+    fetch(requestUrl3)
   ]).then(function (responses) {
     // Get a JSON object from each of the responses
     return Promise.all(responses.map(function (response) {
