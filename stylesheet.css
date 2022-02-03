@@ -1,0 +1,151 @@
+body {
+    color:darkolivegreen;
+    font-family: Arial Narrow, sans-serif;
+}
+
+h3 {
+    font-family: Arial Narrow, sans-serif;
+}
+
+h2 {
+    font-family: Arial Narrow, sans-serif;
+}
+
+p {
+    font-family: Arial Narrow, sans-serif;
+}
+
+header {
+    padding: 20px 35px;
+    background-color:slategray;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: Arial Narrow, sans-serif;
+}
+
+
+header h3 {
+    color:darkolivegreen;
+
+}
+
+header a {
+    text-decoration: none;
+    color:darkolivegreen;
+}
+
+header nav {
+        margin: 7px 0;
+    }
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    margin: 0 30px;
+    font-weight: lighter;
+    font-size: 1.55vw;
+}
+
+header nav ul li a:hover {
+    background: yellowgreen;
+    color: darkolivegreen;
+    border-radius: 15px;
+    text-shadow: none;
+  }
+
+  body, html {
+    height: 100%;
+}
+
+  /* The hero image */
+.hero-image {
+
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/Work\ From\ Home\ Freelance\ Blog\ Banner.png");
+  
+    /* Set a specific height */
+    height: 80%;
+  
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+<!---CONTAINER STUFF--->
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.container-form {
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    background-color: rgba(252, 225, 56, 0.8);
+    padding: 20px;
+    color: var(--secondary-color);
+    width: 40%;
+    margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.container-input {
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    width: 100%;
+    margin-bottom: 15px;
+    background-color: rgba(255,255,255, 0.75);
+    }
+    
+    .form-input:focus {
+      background-color: rgba(255,255,255, 1);
+      outline: none;
+    }
+
+a:link, a:visited, a:hover, a:active { background-color: green; color: white; padding: 10px 25px; text-align: center; text-decoration: none; display: inline-block; }
+
+
+
+.container-form button {
+    border-radius: 10px;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.container-form button:hover {
+    background-color: var(--tertiary-color);  
+}
+
+
+@media all and (max-width:30em) {
+    a.button{
+        display:block;
+        margin:0.2em auto;
+    }
+}
