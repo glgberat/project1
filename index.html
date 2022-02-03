@@ -7,16 +7,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Git it Done</title>
 </head>
 
-<body class="flex-column min-100-vh">
+<body>
   <header class="hero">
-    <h1 class="app-title"><i class="fas fa-book-reader"></i> Bookmate!</h1>
+    <h1 class="app-title"><i class="fas fa-book-reader"></i> BookBrowser!</h1>
     <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
     </p>
   </header>
+
+ 
 
 
   <main class="flex-row justify-space-between">
@@ -44,18 +47,96 @@
      name="book" value="subject">
     <label for="contactChoice3">Subject</label>
   </div>
-
-          
-          <button id="searchbtn" type="submit" class="btn">Search</button>
+  <button id="searchbtn" type="submit" class="btn">Search</button>
         </form>
       </div>
     </div>
+
     <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Resluts for: <span id="search"></span></h2>
-      <div id="repos-container" class="list-group"></div>
+      <h2 class="subtitle">New York Times Best Seller 2021 <span id="search"></span></h2>
+     
+      <div class="row m-2">
+      <div class="col-12 card-group" id="nyt" >
+
+         <!---
+        <div class="card">
+          <img src="..." alt="..." class="img-thumbnail">
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+         </div>
+
+         
+         
+  
+         <div class="card">
+          <img src="..." alt="..." class="img-thumbnail">
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+         </div>
+
+         <div class="card">
+          <img src="..." alt="..." class="img-thumbnail">
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+         </div>
+
+         <div class="card">
+          <img src="..." alt="..." class="img-thumbnail">
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+         </div>
+
+         <div class="card">
+          <img src="..." alt="..." class="img-thumbnail">
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+
+
+           -->
+         </div>
+         
+  
+        </div>
     </div>
+ 
+
+   
+
     
+
+
+
+
   </main>  
+
+  <div class="row m-3">
+    <div id="searchresults" class="col-md-4 card-deck mt-4">
+     <!--- <div class="card" >
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Cras justo odio</li>
+          <li class="list-group-item">Dapibus ac facilisis in</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div> -->
+    </div>
+
+  </div>
+
+
 
 <!-- add script at the bottom of the body -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
