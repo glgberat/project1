@@ -86,6 +86,7 @@ searchResEl.appendChild(cardsEl);
 
 function BooksbyAuthor(data)
 {
+  searchResEl.innerHTML="";
 
   var colEl=document.createElement("div");
     colEl.className="col-md-3 card-group";
