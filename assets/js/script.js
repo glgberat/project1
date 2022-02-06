@@ -90,7 +90,7 @@ function BooksbyAuthor(data)
 
   var colEl=document.createElement("div");
     colEl.className="col-md-3 card-group";
-    searchResEl.appendChild(colEl);
+    
 
   for(i=0;i<data[0].numFound;i++)
   {
@@ -156,6 +156,8 @@ function BooksbyAuthor(data)
   
   
   }
+
+  searchResEl.appendChild(colEl);
 
 } 
 
