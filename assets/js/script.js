@@ -13,6 +13,8 @@ var requestUrl2;
 
 function BooksbyISBN2(data){
 
+
+
 var cardsEl=document.createElement("div");
 cardsEl.className="card h-100";
 
@@ -38,11 +40,23 @@ pel.className="card-text";
 cardbodyEl.appendChild(pEL);
 
 
+
+
+
+
+
+
 aEL.appendChild(imgEL);
 cardsEl.appendChild(aEL);
 
 searchResEl.appendChild(cardsEl);
+
+
+
 }
+
+
+
 
 function BooksbyISBN(data)
 {
@@ -64,7 +78,11 @@ cardsEl.appendChild(aEL);
 
 searchResEl.appendChild(cardsEl);
 
+
+
 }
+
+
 
 function BooksbyAuthor(data)
 {
@@ -72,7 +90,7 @@ function BooksbyAuthor(data)
 
   var colEl=document.createElement("div");
     colEl.className="col-md-3 card-group";
-    searchResEl.appendChild(colEl);
+    
 
   for(i=0;i<data[0].numFound;i++)
   {
@@ -135,7 +153,11 @@ function BooksbyAuthor(data)
   
   searchResEl.appendChild(cardsEl);
   
-   }
+  
+  
+  }
+
+  searchResEl.appendChild(colEl);
 
 } 
 
@@ -172,10 +194,19 @@ NYTEl.innerHTML="";
         nycardEl.appendChild(nycardfooterEl);
         
         }
-      });
+          
+      
+      
+
+          
+    });
   });
   
+
+
 }
+
+
 var getApi= function(event) {
   event.preventDefault();
 
@@ -212,7 +243,13 @@ else if(radioValue=="author")
 
 
 
- Promise.all([
+
+
+
+
+
+
+  Promise.all([
     fetch(requestUrl1),
     fetch(requestUrl2),
   ]).then(function (responses) {
@@ -232,11 +269,17 @@ else if(radioValue=="author")
     console.log(error);
   });
 
-  } 
+    
+      
+    
+} 
+
+
+
+
 
 NYTBest();
 userFormEl.addEventListener("submit", getApi);
-
 
 
 

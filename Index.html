@@ -18,7 +18,7 @@
 </head>
 
 <!-- Body -->
-<body class="">
+<body class="hero">
 
     <header class="top-bar">
         <!-- Left Bar -->
@@ -45,10 +45,10 @@
     <div class="hero-image"></div>
 
     <br><br>
-
+    <main class="flex-row justify-space-between">
     <div class="container">
     <!-- API Container -->
-    <div class="col-6 mx-auto">
+    <div class="col-7 mx-auto">
     <form id="user-form" class="card-body row bg-light row border border-secondary">
         <label class="form-label" for="username">Browse Books</label>
         <input name="search" id="search" type="text" autofocus="true" class="form-input" />
@@ -81,7 +81,7 @@
     <div class="row">
         <div class="col">
             <div class="card bg-light" style="width: 18rem;">
-                <img src="..." class="book-img" alt="This is an image of the cover of the searched text.">
+                <img src="https://covers.openlibrary.org/a/$key/$value-$size.jpg" class="book-img" alt="This is an image of the cover of the searched text.">
                     <div class="card-body">
                         <h5 class="card-title"></h5>
                         <p class="card-author"></p>
@@ -90,7 +90,7 @@
         </div>  
     </div>
 
-    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-12">
         <h2 class="subtitle">New York Times Best Seller 2021 <span id="search"></span></h2>
        
         <div class="row m-2">
@@ -99,13 +99,12 @@
 </div>
     </div>
       </div>
-
+    
+    </main>
       <div id=searchresults class="row m-3">
         <div class="col-md-3 card-group">
    
-    
-
-    </section>
+     </section>
     </div>
 
     <!-- Script -->
