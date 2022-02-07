@@ -190,6 +190,7 @@ console.log(radioValue);
 if(radioValue=="title")
 {
   requestUrl1="http://openlibrary.org/search.json?title="+searchword; 
+  requestUrl2="https://www.googleapis.com/books/v1/volumes?q="+searchword+"intitle&key="+GBooksApiID;
 }// to search title
   else if(radioValue=="subject")
   {
@@ -205,7 +206,7 @@ else if(radioValue=="author")
   else 
   {
     requestUrl1="https://openlibrary.org/"+radioValue+"/"+searchword+".json"; // to search authors and isbn#
-
+    requestUrl2="https://www.googleapis.com/books/v1/volumes?q="+searchword+"isbn&key="+GBooksApiID;
   }
 
  console.log(requestUrl1);
