@@ -1,3 +1,4 @@
+var data1;
 var userFormEl = document.querySelector("#user-form");
 var searchButton = document.getElementById('searchbtn');
 var NYTEl = document.getElementById('nyt');
@@ -42,6 +43,7 @@ aEL.appendChild(imgEL);
 cardsEl.appendChild(aEL);
 
 searchResEl.appendChild(cardsEl);
+
 }
 
 function BooksbyISBN(data)
@@ -72,7 +74,7 @@ function BooksbyAuthor(data)
 
   var colEl=document.createElement("div");
     colEl.className="col-md-3 card-group";
-    searchResEl.appendChild(colEl);
+    
 
   for(i=0;i<data[0].numFound;i++)
   {
@@ -135,10 +137,11 @@ function BooksbyAuthor(data)
   
   searchResEl.appendChild(cardsEl);
   
-   }
+ }
+
+  searchResEl.appendChild(colEl);
 
 } 
-
 
 function NYTBest() 
 {
@@ -158,10 +161,8 @@ NYTEl.innerHTML="";
         imgEL.className="card-img-top";
         imgEL.src=data.results.books[i].book_image;
         
-        
         aEL.appendChild(imgEL);
         nycardEl.appendChild(aEL);
-        
         
         var nycardfooterEl=document.createElement("div");
         nycardfooterEl.className="card-footer";
@@ -172,10 +173,12 @@ NYTEl.innerHTML="";
         nycardEl.appendChild(nycardfooterEl);
         
         }
+          
       });
   });
   
 }
+
 var getApi= function(event) {
   event.preventDefault();
 
@@ -187,6 +190,7 @@ console.log(radioValue);
 if(radioValue=="title")
 {
   requestUrl1="http://openlibrary.org/search.json?title="+searchword; 
+  requestUrl2="https://www.googleapis.com/books/v1/volumes?q="+searchword+"intitle&key="+GBooksApiID;
 }// to search title
   else if(radioValue=="subject")
   {
@@ -202,17 +206,15 @@ else if(radioValue=="author")
   else 
   {
     requestUrl1="https://openlibrary.org/"+radioValue+"/"+searchword+".json"; // to search authors and isbn#
-
+    requestUrl2="https://www.googleapis.com/books/v1/volumes?q="+searchword+"isbn&key="+GBooksApiID;
   }
 
-
-  console.log(requestUrl1);
+ console.log(requestUrl1);
 
  var requestUrl2 ="https://www.googleapis.com/books/v1/volumes?q="+searchword+"isbn&key="+GBooksApiID;
 
 
-
- Promise.all([
+Promise.all([
     fetch(requestUrl1),
     fetch(requestUrl2),
   ]).then(function (responses) {
@@ -224,6 +226,8 @@ else if(radioValue=="author")
     // Log the data to the console
     // You would do something with both sets of data here
     console.log(data);
+    data1=data;
+   
     //BooksbyISBN2(data);
     BooksbyAuthor(data);
 
@@ -231,13 +235,12 @@ else if(radioValue=="author")
     // if there's an error, log it
     console.log(error);
   });
-
-  } 
-
+  if(radioValue== "isbn"){
+    BooksbyISBN(data1);  
+  }
+  if(radioValue== "author"){
+    BooksbyAuthor(data1);  
+  }
+  }
 NYTBest();
 userFormEl.addEventListener("submit", getApi);
-
-
-
-
-
