@@ -1,5 +1,4 @@
-# Book Browswer
-## Project 1 
+# Book Browswer - Project 1 
 
 # Purpose 
 * Use a CSS framework other than Bootstrap.
