@@ -17,3 +17,6 @@ When a user searches a text (using its ISBN#, title, author, or genre) through B
 
 ## Deployed Link 
 * https://glgberat.github.io/project1/ 
+
+## Screenshot 
+<img width="1439" alt="Screen Shot 2022-02-03 at 6 57 43 PM" src="https://user-images.githubusercontent.com/95178236/152855907-f7084bb0-11b1-4d62-9fe4-231ed04222a1.png">
