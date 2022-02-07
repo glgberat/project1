@@ -1,0 +1,287 @@
+
+
+
+/* code for Openlibrary Title function
+searchResEl.innerHTML="";
+  for(i=0;i<data[0].num_found; i++)
+{
+  var colEl=document.createElement("div");
+  colEl.className="col-md-3 card-group";
+  searchResEl.appendChild(colEl);
+
+
+  var cardsEl=document.createElement("div");
+  cardsEl.className="card mb-3";
+  colEl.appendChild(cardsEl);
+
+  var rowNoGut=document.createElement("div");
+  rowNoGut.className="row no-gutters";
+  cardsEl.appendChild(rowNoGut);
+
+  var colMd4=document.createElement("div");
+  colMd4.className="col-md-4";
+  var imgEL=document.createElement("img");
+  imgEL.className="card-img";
+  imgEL.src="https://covers.openlibrary.org/b/id/"+data[0].docs[i].cover_i+"-L.jpg";
+  colMd4.appendChild(imgEL);  
+  rowNoGut.appendChild(colMd4);
+
+  var colMd8=document.createElement("div");
+colMd8.className="col-md-8";
+
+cardbodyEl=document.createElement("div");
+cardbodyEl.className="card-body";
+colMd8.appendChild(cardbodyEl);
+
+var h5El=document.createElement("h5");
+h5El.className="card-title";
+h5El.innerHTML="Title: "+data[0].docs[i].title;
+cardbodyEl.appendChild(h5El);
+
+var pEl=document.createElement("p");
+pEl.className="card-text";
+pEl.innerHTML=" "+data[0].docs[i].first_sentence[0];
+cardbodyEl.appendChild(pEl);
+
+var ulEl=document.createElement("ul");
+ulEl.className="list-group list-group-flush";
+cardbodyEl.appendChild(ulEl);
+
+var liEL=document.createElement("li");
+liEL.className="list-group-item";
+
+liEL.innerHTML="ISBN: "+data[0].docs[i].isbn[0];
+//if(data[0].docs[i].birth_date==undefined){liEL.innerHTML="ISBN:";}
+
+ulEl.appendChild(liEL);
+
+liEL=document.createElement("li");
+liEL.className="list-group-item";
+liEL.innerHTML="Publisher: "+data[0].docs[i].publisher[0];
+ulEl.appendChild(liEL);
+
+liEL=document.createElement("li");
+liEL.className="list-group-item";
+liEL.innerHTML="Author(s): "+data[0].docs[i].author_name;
+ulEl.appendChild(liEL);
+ 
+
+rowNoGut.appendChild(colMd8);
+
+}
+
+
+##2 version
+function BooksbyTitle(data)
+{
+
+  searchResEl.innerHTML="";
+
+  var colEl=document.createElement("div");
+    colEl.className="col-md-3 card-group";
+    
+
+  for(i=0;i<100;i++)
+  {
+  
+  var cardsEl=document.createElement("div");
+  cardsEl.className="card ws";
+ 
+  colEl.appendChild(cardsEl);
+
+  var imgEL=document.createElement("img");
+  imgEL.className="img-thumbnail";
+  imgEL.src="https://covers.openlibrary.org/b/id/"+data[0].docs[i].cover_i+"-L.jpg";
+  cardsEl.appendChild(imgEL);  
+  
+  var cardbodyEl=document.createElement("div");
+  cardbodyEl.className="card-body";
+  cardsEl.appendChild(cardbodyEl);
+  
+  var h5El=document.createElement("h5");
+  h5El.className="card-title";
+  h5El.innerHTML="Title: "+data[0].docs[i].title;
+  cardbodyEl.appendChild(h5El);
+  
+  var pEl=document.createElement("p");
+  pEl.className="card-text";
+  pEl.innerHTML=" "+data[0].docs[i].first_sentence[0];
+  cardbodyEl.appendChild(pEl);
+
+  var ulEl=document.createElement("ul");
+  ulEl.className="list-group list-group-flush";
+  cardsEl.appendChild(ulEl);
+
+  var liEL=document.createElement("li");
+  liEL.className="list-group-item";
+  
+  liEL.innerHTML="ISBN: "+data[0].docs[i].isbn[0];
+  if(data[0].docs[i].birth_date==undefined){liEL.innerHTML="Birth Date:";}
+ 
+  ulEl.appendChild(liEL);
+
+  liEL=document.createElement("li");
+  liEL.className="list-group-item";
+  liEL.innerHTML="Publisher: "+data[0].docs[i].publisher[0];
+  ulEl.appendChild(liEL);
+
+  liEL=document.createElement("li");
+  liEL.className="list-group-item";
+  liEL.innerHTML="Author(s): "+data[0].docs[i].author_name;
+  ulEl.appendChild(liEL);
+
+  cardbodyEl=document.createElement("div");
+  cardbodyEl.className="card-body";
+  var aEL=document.createElement("a");
+  aEL.href=" https://openlibrary.org/books/"+data[0].docs[i].cover_edition_key;
+  aEL.className="card-link";
+  aEL.innerHTML="Details";
+
+  cardsEl.appendChild(cardbodyEl);
+
+  cardsEl.appendChild(aEL);
+  
+  searchResEl.appendChild(cardsEl);
+  
+  
+  
+  }
+
+  searchResEl.appendChild(colEl);
+
+
+
+}
+
+
+function BooksbyISBN2(data)  //openlibrary api
+{  
+
+
+
+var cardsEl=document.createElement("div");
+cardsEl.className="card h-100";
+
+
+var aEL=document.createElement("a");
+aEL.href="https://www.amazon.com/dp/"+data[0].isbn_10[0];
+aEL.target="_blank";
+
+var imgEL=document.createElement("img");
+imgEL.className="card-img-top";
+imgEL.src="https://covers.openlibrary.org/b/isbn/"+data[0].isbn_10[0]+"-L.jpg";
+
+var cardbodyEl=document.createElement("div");
+cardbodyEl.className="card-body";
+cardsEl.appendChild(cardbodyEl);
+
+var h5El=document.createElement("h5");
+h5El.className="card-title";
+cardbodyEl.appendChild(h5El);
+
+var pEL=document.createElement("p");
+pEl.className="card-text";
+cardbodyEl.appendChild(pEL);
+
+
+
+
+
+
+
+
+aEL.appendChild(imgEL);
+cardsEl.appendChild(aEL);
+
+searchResEl.appendChild(cardsEl);
+
+
+
+}
+
+function BooksbyTitle(data)
+{
+
+  searchResEl.innerHTML="";
+
+  var colEl=document.createElement("div");
+    colEl.className="col-md-3 card-group";
+    
+
+  for(i=0;i<data[0].items.length;i++)
+  {
+  
+  var cardsEl=document.createElement("div");
+  cardsEl.className="card ws";
+ 
+  colEl.appendChild(cardsEl);
+
+  var imgEL=document.createElement("img");
+  imgEL.className="img-thumbnail";
+  imgEL.src=data[0].items[i].volumeInfo.imageLinks.thumbnail;
+  cardsEl.appendChild(imgEL);  
+  
+  var cardbodyEl=document.createElement("div");
+  cardbodyEl.className="card-body";
+  cardsEl.appendChild(cardbodyEl);
+  
+  var h5El=document.createElement("h5");
+  h5El.className="card-title";
+  h5El.innerHTML="Title: "+data[0].items[i].volumeInfo.title;
+  cardbodyEl.appendChild(h5El);
+  
+  var pEl=document.createElement("p");
+  pEl.className="card-text";
+  //pEl.innerHTML=" "+data[1].items[i].volumeInfo.description;
+  cardbodyEl.appendChild(pEl);
+
+  var ulEl=document.createElement("ul");
+  ulEl.className="list-group list-group-flush";
+  cardsEl.appendChild(ulEl);
+
+  var liEL=document.createElement("li");
+  liEL.className="list-group-item";
+  
+  liEL.innerHTML="ISBN: "+data[0].items[i].volumeInfo.industryIdentifiers[0].identifier;
+  //if(data[0].docs[i].birth_date==undefined){liEL.innerHTML="Birth Date:";}
+ 
+  ulEl.appendChild(liEL);
+
+  liEL=document.createElement("li");
+  liEL.className="list-group-item";
+  liEL.innerHTML="Publisher: "+data[0].items[i].volumeInfo.publisher;
+  ulEl.appendChild(liEL);
+
+  liEL=document.createElement("li");
+  liEL.className="list-group-item";
+  liEL.innerHTML="Author(s): "+data[0].items[i].volumeInfo.authors[0];
+  ulEl.appendChild(liEL);
+
+  cardbodyEl=document.createElement("div");
+  cardbodyEl.className="card-body";
+  var aEL=document.createElement("a");
+  aEL.href=data[0].items[i].volumeInfo.canonicalVolumeLink;
+  aEL.className="card-link";
+  aEL.innerHTML="Details";
+
+  cardsEl.appendChild(cardbodyEl);
+
+  cardsEl.appendChild(aEL);
+  
+  searchResEl.appendChild(cardsEl);
+  
+  searchResEl.appendChild(colEl);
+  
+  }
+
+  
+
+
+
+}
+
+
+
+*/
+
+
