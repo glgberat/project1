@@ -12,10 +12,6 @@ var searchword;
 var requestUrl2;
 
 
-
-
-
-
 function BooksbyISBN(data) //google books api
 {
   searchResEl.innerHTML="";
@@ -41,8 +37,6 @@ searchResEl.appendChild(cardsEl);
 }
 
 }
-
-
 
 function BooksbySubject(data)
 {
@@ -228,11 +222,6 @@ function BooksbyTitle(data)
   }
 }
 
-
-
-
-
-
 function NYTBest() 
 {
 NYTEl.innerHTML="";
@@ -402,9 +391,6 @@ else if(radioValue=="author")
 
   }    
 } 
-
-
-
 
 
 NYTBest();
